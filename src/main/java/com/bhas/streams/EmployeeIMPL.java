@@ -94,7 +94,6 @@ public class EmployeeIMPL
 				Employee seniorMostEmp = employeeList.parallelStream().sorted(Comparator.comparing(Employee::getYearOfJoining)).findFirst().get();
 				System.out.println(seniorMostEmp.getName());
 	
-		*/
 		// 10. How many male and female employees are there in the sales and marketing team?,
 				System.out.println("*******\n Employees count in Sales and Marketing Team");
 					employeeList.parallelStream()
@@ -103,7 +102,13 @@ public class EmployeeIMPL
 								.entrySet()
 								.forEach(System.out::println);
 		
-	
+		*/
+		// 11. What is the average salary of male and female employees?,
+				System.out.println("*******\n Average salary of employees");	
+				employeeList.parallelStream()
+							.collect(Collectors.groupingBy(Employee::getGender,Collectors.averagingDouble(Employee::getSalary)))
+							.entrySet()
+							.forEach(System.out::println);
 	
 	}
 
