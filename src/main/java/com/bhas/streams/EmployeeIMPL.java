@@ -88,9 +88,23 @@ public class EmployeeIMPL
 				Employee seniorMostEmployee = employeeList.parallelStream().collect(Collectors.minBy(Comparator.comparing(Employee::getYearOfJoining))).get();
 				System.out.println(seniorMostEmployee.getYearOfJoining()+" "+seniorMostEmployee.getName());
 	
-		*/
-		// 9.a Who has the most working experience in the organization?, using sorting,
 		
+		// 9.a Who has the most working experience in the organization?, using sorting,
+				System.out.println("*******\n Senior Most Employees");
+				Employee seniorMostEmp = employeeList.parallelStream().sorted(Comparator.comparing(Employee::getYearOfJoining)).findFirst().get();
+				System.out.println(seniorMostEmp.getName());
+	
+		*/
+		// 10. How many male and female employees are there in the sales and marketing team?,
+				System.out.println("*******\n Employees count in Sales and Marketing Team");
+					employeeList.parallelStream()
+								.filter(emp ->emp.getDepartment().equalsIgnoreCase("Sales and Marketing"))
+								.collect(Collectors.groupingBy(Employee::getGender,Collectors.counting()))
+								.entrySet()
+								.forEach(System.out::println);
+		
+	
+	
 	}
 
 }
