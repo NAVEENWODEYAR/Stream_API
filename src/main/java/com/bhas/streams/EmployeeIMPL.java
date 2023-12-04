@@ -55,11 +55,19 @@ public class EmployeeIMPL
 				Map<String, Double> avgAge = employeeList.stream().collect(Collectors.groupingBy(Employee::getGender,Collectors.averagingDouble(Employee::getAge)));
 						System.out.println(avgAge);
 	
-		*/
+
 		// 4. Get the details of highest paid employee in the organization?,
 				System.out.println("*******\n Highest Paid Employee");
 				Employee highestPaidEmp = employeeList.stream().collect(Collectors.maxBy(Comparator.comparing(Employee::getSalary))).get();
 				System.out.println(highestPaidEmp.getName());
+	
+		*/
+		// 5. Get the names of all employees who have joined after 2015?,
+				System.out.println("*******\n Employees joined after 2015");
+				employeeList.stream().filter(emp -> emp.getYearOfJoining() >= 2015).map(Employee::getName).forEach(System.out::println);
+				
+			
+		
 	}
 
 }
