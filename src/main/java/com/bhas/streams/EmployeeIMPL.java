@@ -111,7 +111,7 @@ public class EmployeeIMPL
 							.entrySet()
 							.forEach(System.out::println);
 	
-		*/
+		
 		// 12. List down the names of all employees in each department?,
 				System.out.println("*******\n Employees in each department");
 				employeeList.parallelStream().collect(Collectors.groupingBy(Employee::getDepartment)).entrySet().forEach(System.out::println);
@@ -124,6 +124,13 @@ public class EmployeeIMPL
 				System.out.println("\nMaximum salary of the organization:"+summaryStatistics.getMax());
 				System.out.println("\nMinimum salary of the organization:"+summaryStatistics.getMin());
 				System.out.println("\nTotal salary count of the organization:"+summaryStatistics.getCount());
+	
+		*/
+	    // 14. Separate the employees who are younger or equal to 25 years from those employees who are older than 25 years.,
+				System.out.println("*******\nPartioningBy ");
+				Map<Boolean, List<Employee>> partionedEmp = employeeList.parallelStream().collect(Collectors.partitioningBy(emp -> emp.getAge() >= 25));
+				System.out.println(partionedEmp);
+	
 	}
 
 }
