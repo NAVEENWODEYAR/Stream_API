@@ -8,13 +8,20 @@ spring:
     name: Streams
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver 
-    url: mysql:jdbc://localhost:3306/streamdb?createDatabaseIfNotExist=true
+    url: jdbc:mysql://localhost:3306/sbdb?createDatabaseIfNotExist=true
     username: ${Name}
     password: ${Pwd}
+  data:
+    jpa:
+      repositories:
+        enabled: true
+     
   jpa:
     hibernate:
       ddl-auto: update
     show-sql: true
+    database: mysql
+    database-platform: org.hibernate.dialect.MySQLDialect
     
 management:
   endpoints:
