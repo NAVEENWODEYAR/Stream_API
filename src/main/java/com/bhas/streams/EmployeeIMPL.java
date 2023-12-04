@@ -61,12 +61,20 @@ public class EmployeeIMPL
 				Employee highestPaidEmp = employeeList.stream().collect(Collectors.maxBy(Comparator.comparing(Employee::getSalary))).get();
 				System.out.println(highestPaidEmp.getName());
 	
-		*/
+		
 		// 5. Get the names of all employees who have joined after 2015?,
 				System.out.println("*******\n Employees joined after 2015");
 				employeeList.stream().filter(emp -> emp.getYearOfJoining() >= 2015).map(Employee::getName).forEach(System.out::println);
 				
-			
+		
+		// 6. Count the number of employees in each department?,
+				System.out.println("*******\n Employees count in departments");
+				employeeList.parallelStream().collect(Collectors.groupingBy(Employee::getDepartment,Collectors.counting())).entrySet().forEach(System.out::println);
+		
+		*/
+		// 7. What is the average salary of each department?,
+				System.out.println("*******\n Employees average salary in departments");
+				employeeList.parallelStream().collect(Collectors.groupingBy(Employee::getDepartment,Collectors.averagingDouble(Employee::getSalary))).entrySet().forEach(System.out::println);
 		
 	}
 
