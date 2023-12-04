@@ -2,6 +2,7 @@ package com.bhas.streams;
 
 import java.util.ArrayList;
 import java.util.Comparator;
+import java.util.DoubleSummaryStatistics;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
@@ -114,6 +115,15 @@ public class EmployeeIMPL
 		// 12. List down the names of all employees in each department?,
 				System.out.println("*******\n Employees in each department");
 				employeeList.parallelStream().collect(Collectors.groupingBy(Employee::getDepartment)).entrySet().forEach(System.out::println);
+	
+				
+		// 13. What is the average salary and total salary of the whole organization?,
+				System.out.println("*******\nDoubleSummaryStatistics ");
+				DoubleSummaryStatistics summaryStatistics = employeeList.stream().collect(Collectors.summarizingDouble(Employee::getSalary));
+				System.out.println("\nTotal salary of the organization:"+summaryStatistics.getSum());
+				System.out.println("\nMaximum salary of the organization:"+summaryStatistics.getMax());
+				System.out.println("\nMinimum salary of the organization:"+summaryStatistics.getMin());
+				System.out.println("\nTotal salary count of the organization:"+summaryStatistics.getCount());
 	}
 
 }
