@@ -102,7 +102,7 @@ public class EmployeeIMPL
 								.entrySet()
 								.forEach(System.out::println);
 		
-		*/
+		
 		// 11. What is the average salary of male and female employees?,
 				System.out.println("*******\n Average salary of employees");	
 				employeeList.parallelStream()
@@ -110,6 +110,10 @@ public class EmployeeIMPL
 							.entrySet()
 							.forEach(System.out::println);
 	
+		*/
+		// 12. List down the names of all employees in each department?,
+				System.out.println("*******\n Employees in each department");
+				employeeList.parallelStream().collect(Collectors.groupingBy(Employee::getDepartment)).entrySet().forEach(System.out::println);
 	}
 
 }
