@@ -71,11 +71,17 @@ public class EmployeeIMPL
 				System.out.println("*******\n Employees count in departments");
 				employeeList.parallelStream().collect(Collectors.groupingBy(Employee::getDepartment,Collectors.counting())).entrySet().forEach(System.out::println);
 		
-		*/
+		
 		// 7. What is the average salary of each department?,
 				System.out.println("*******\n Employees average salary in departments");
 				employeeList.parallelStream().collect(Collectors.groupingBy(Employee::getDepartment,Collectors.averagingDouble(Employee::getSalary))).entrySet().forEach(System.out::println);
 		
+		*/
+		// 8. Get the details of youngest male employee in the product development department?,
+				System.out.println("*******\n Youngest male employee in Product Development");
+				Employee youngestMale = employeeList.parallelStream().filter(emp ->emp.getDepartment() .equalsIgnoreCase("Product Development") && emp.getGender().equalsIgnoreCase("Male")).min(Comparator.comparing(Employee::getAge)).get();
+				System.out.println(youngestMale.getName()+"-"+youngestMale.getAge());
+	
 	}
 
 }
