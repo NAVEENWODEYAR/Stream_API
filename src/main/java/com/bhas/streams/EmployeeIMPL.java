@@ -1,6 +1,7 @@
 package com.bhas.streams;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
@@ -50,12 +51,15 @@ public class EmployeeIMPL
 	
 		
 		// 3. What is the average age of male and female employees?,
-			System.out.println("*******\n Departments");	
-			Map<String, Double> avgAge = employeeList.stream().collect(Collectors.groupingBy(Employee::getGender,Collectors.averagingDouble(Employee::getAge)));
+				System.out.println("*******\n Average age of Employees");	
+				Map<String, Double> avgAge = employeeList.stream().collect(Collectors.groupingBy(Employee::getGender,Collectors.averagingDouble(Employee::getAge)));
 						System.out.println(avgAge);
 	
 		*/
-	
+		// 4. Get the details of highest paid employee in the organization?,
+				System.out.println("*******\n Highest Paid Employee");
+				Employee highestPaidEmp = employeeList.stream().collect(Collectors.maxBy(Comparator.comparing(Employee::getSalary))).get();
+				System.out.println(highestPaidEmp.getName());
 	}
 
 }
