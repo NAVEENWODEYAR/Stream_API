@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 public class EmployeeIMPL 
 {
@@ -35,13 +36,18 @@ public class EmployeeIMPL
 		employeeList.add(new Employee(266, "Sanvi Pandey", 26, "Female", "Product Development", 2015, 28900.0));
 		employeeList.add(new Employee(277, "Anuj Chettiar", 31, "Male", "Product Development", 2012, 35700.0));
 
-		
+		/*
 		// Real Time Queries On employeeList,
-		
 		// 1. How many male and female employees are there in the organization?,
-			System.out.println("*******\n Gender count");	
-			Map<String, Long> genderCount = employeeList.parallelStream().collect(Collectors.groupingBy(Employee::getGender,Collectors.counting()));
+				System.out.println("*******\n Gender count");	
+				Map<String, Long> genderCount = employeeList.parallelStream().collect(Collectors.groupingBy(Employee::getGender,Collectors.counting()));
 									System.out.println(genderCount);
+		*/
+		
+		// 2. Print the name of all departments in the organization?,
+				System.out.println("*******\n Departments");
+				employeeList.stream().map(Employee::getDepartment).distinct().forEach(System.out::println);
+	
 	}
 
 }
