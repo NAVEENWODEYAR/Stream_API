@@ -42,11 +42,19 @@ public class EmployeeIMPL
 				System.out.println("*******\n Gender count");	
 				Map<String, Long> genderCount = employeeList.parallelStream().collect(Collectors.groupingBy(Employee::getGender,Collectors.counting()));
 									System.out.println(genderCount);
-		*/
+
 		
 		// 2. Print the name of all departments in the organization?,
 				System.out.println("*******\n Departments");
 				employeeList.stream().map(Employee::getDepartment).distinct().forEach(System.out::println);
+	
+		
+		// 3. What is the average age of male and female employees?,
+			System.out.println("*******\n Departments");	
+			Map<String, Double> avgAge = employeeList.stream().collect(Collectors.groupingBy(Employee::getGender,Collectors.averagingDouble(Employee::getAge)));
+						System.out.println(avgAge);
+	
+		*/
 	
 	}
 
