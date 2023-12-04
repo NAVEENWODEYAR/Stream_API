@@ -125,11 +125,16 @@ public class EmployeeIMPL
 				System.out.println("\nMinimum salary of the organization:"+summaryStatistics.getMin());
 				System.out.println("\nTotal salary count of the organization:"+summaryStatistics.getCount());
 	
-		*/
+		
 	    // 14. Separate the employees who are younger or equal to 25 years from those employees who are older than 25 years.,
 				System.out.println("*******\nPartioningBy ");
 				Map<Boolean, List<Employee>> partionedEmp = employeeList.parallelStream().collect(Collectors.partitioningBy(emp -> emp.getAge() >= 25));
 				System.out.println(partionedEmp);
+		 */
+		// 15. Who is the oldest employee in the organization? What is his age and which department he belongs to?,
+				System.out.println("*******\nOldest Employee ");
+				Employee oldestEmp = employeeList.parallelStream().collect(Collectors.maxBy(Comparator.comparing(Employee::getAge))).get();
+				System.out.println(oldestEmp.getAge()+" "+oldestEmp.getName()+" "oldestEmp.getDepartment());
 	
 	}
 
