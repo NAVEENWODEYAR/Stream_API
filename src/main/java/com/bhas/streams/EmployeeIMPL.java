@@ -2,6 +2,8 @@ package com.bhas.streams;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
+import java.util.stream.Collectors;
 
 public class EmployeeIMPL 
 {
@@ -37,8 +39,9 @@ public class EmployeeIMPL
 		// Real Time Queries On employeeList,
 		
 		// 1. How many male and female employees are there in the organization?,
-				
-		
+			System.out.println("*******\n Gender count");	
+			Map<String, Long> genderCount = employeeList.parallelStream().collect(Collectors.groupingBy(Employee::getGender,Collectors.counting()));
+									System.out.println(genderCount);
 	}
 
 }
