@@ -1,6 +1,7 @@
 package com.bhas.collectors;
 
 import java.util.Arrays;
+import java.util.Comparator;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Set;
@@ -38,12 +39,22 @@ public class CollectorsMethods
 				Set<Integer> uniqueNumbers = oddNumbers.parallelStream().collect(Collectors.toSet());
 				System.out.println("List provided,"+oddNumbers);
 				System.out.println("Set obtained,"+uniqueNumbers);
-	   */
+	   
 		// 3. Creating specific collection: toCollection(),
 				System.out.println("\n Collectors.toCollection()");
 				LinkedList<Integer> newList = oddNumbers.parallelStream().filter(n -> n>=5).collect(Collectors.toCollection(LinkedList::new));
 				System.out.println("Collection obtained from the list,"+newList+""+newList.getClass());
 		
+	    // 4. Counting elements: Counting(),
+				System.out.println("\n Collectors.count()");
+				System.out.println(" Numbers of entries in the collection,"+oddNumbers.stream().count());
+	    */
+		// 5. Finding minimum value: minBy(),
+	    		System.out.println("\n Collectors.minBy()");
+	    		Integer min = oddNumbers.parallelStream().min((o1, o2) -> o1-o2 ).get();
+	    		Integer min1 = oddNumbers.stream().sorted().findFirst().get();
+	    		Integer min2 = oddNumbers.parallelStream().collect(Collectors.minBy(Comparator.naturalOrder())).get();
+	    		System.out.println("Minimum value in the collection,"+min+" "+min1+" "+min2);
 	}
 	
 
