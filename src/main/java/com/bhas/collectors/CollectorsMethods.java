@@ -1,6 +1,7 @@
 package com.bhas.collectors;
 
 import java.util.Arrays;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Set;
 import java.util.stream.Collectors;
@@ -31,13 +32,18 @@ public class CollectorsMethods
 				System.out.println("Original list,"+oddNumbers);
 				System.out.println("Modified list,"+powerOfNumber);
 				
-		*/
+		
 		// 2. Creating set: toSet(), accumulates elements into a set(unique values)
-				System.out.println("\n Collectors.toset()");
+				System.out.println("\n Collectors.toSet()");
 				Set<Integer> uniqueNumbers = oddNumbers.parallelStream().collect(Collectors.toSet());
-				System.out.println("List priovided,"+oddNumbers);
+				System.out.println("List provided,"+oddNumbers);
 				System.out.println("Set obtained,"+uniqueNumbers);
-				
+	   */
+		// 3. Creating specific collection: toCollection(),
+				System.out.println("\n Collectors.toCollection()");
+				LinkedList<Integer> newList = oddNumbers.parallelStream().filter(n -> n>=5).collect(Collectors.toCollection(LinkedList::new));
+				System.out.println("Collection obtained from the list,"+newList+""+newList.getClass());
+		
 	}
 	
 
