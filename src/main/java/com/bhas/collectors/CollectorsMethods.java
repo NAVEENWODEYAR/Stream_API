@@ -4,7 +4,9 @@ import java.util.Arrays;
 import java.util.Comparator;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Map;
 import java.util.Set;
+import java.util.TreeSet;
 import java.util.stream.Collectors;
 
 public class CollectorsMethods 
@@ -56,7 +58,7 @@ public class CollectorsMethods
 	    		Integer min2 = oddNumbers.parallelStream().collect(Collectors.minBy(Comparator.naturalOrder())).get();
 	    		System.out.println("Minimum value in the collection,"+min+" "+min1+" "+min2);
 	    
-	    */
+	    
 	    // 6.  Finding maximum value: maxBy()
 				System.out.println("\n Collectors.maxBy()");
 				Integer max = oddNumbers.parallelStream().max(Comparator.naturalOrder()).get();
@@ -65,6 +67,17 @@ public class CollectorsMethods
 				Integer max3 = oddNumbers.stream().collect(Collectors.maxBy(Comparator.comparing(Integer::intValue))).get();
 				System.out.println("Maximum value in the collection,"+max+""+max1+""+max2+""+max3);
 	
+	   
+		// 7. Partitioning a list: partitioningBy(),
+				System.out.println("\n Collectors..partitioningBy()");
+				Map<Boolean, List<Integer>> collect = oddNumbers.parallelStream().collect(Collectors.partitioningBy(n -> n/2 ==0));
+				System.out.println(collect);
+	
+		*/
+	   // 8. Creating unmodifiable list: toUnmodifiableList(),UnsupportedOperationException.
+				System.out.println("\n Collectors.toUnmodifiableSet");
+				Set<Integer> unmodifiableSet =  oddNumbers.parallelStream().sorted().collect(Collectors.toUnmodifiableSet());
+				System.out.println(unmodifiableSet);
 	}
 	
 
