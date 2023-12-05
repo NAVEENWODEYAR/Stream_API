@@ -134,8 +134,7 @@ public class EmployeeIMPL
 		// 15. Who is the oldest employee in the organization? What is his age and which department he belongs to?,
 				System.out.println("*******\nOldest Employee ");
 				Employee oldestEmp = employeeList.parallelStream().collect(Collectors.maxBy(Comparator.comparing(Employee::getAge))).get();
-				System.out.println(oldestEmp.getAge()+" "+oldestEmp.getName()+" "oldestEmp.getDepartment());
-	
+				System.out.println(oldestEmp.getAge()+" "+oldestEmp.getName()+" "+oldestEmp.getDepartment());
 	}
 
 }
