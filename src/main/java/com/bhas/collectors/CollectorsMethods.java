@@ -73,11 +73,21 @@ public class CollectorsMethods
 				Map<Boolean, List<Integer>> collect = oddNumbers.parallelStream().collect(Collectors.partitioningBy(n -> n/2 ==0));
 				System.out.println(collect);
 	
-		*/
+		
 	   // 8. Creating unmodifiable list: toUnmodifiableList(),UnsupportedOperationException.
 				System.out.println("\n Collectors.toUnmodifiableSet");
 				Set<Integer> unmodifiableSet =  oddNumbers.parallelStream().sorted().collect(Collectors.toUnmodifiableSet());
 				System.out.println(unmodifiableSet);
+				
+		*/
+	   // 10. Joining elements: joining(),Collectors can be used to create a string by joining all the elements of a collection, with or without any delimiter, suffix, and prefix.
+				System.out.println("\n Collectors.joining()");
+				List<String> namesList = Arrays.asList("Gowri","Nandi","Gani","Lakshmi","MahaLakshmi");
+				String joinedString0 = namesList.stream().collect(Collectors.joining(" "));
+				String joinedString = namesList.parallelStream().collect(Collectors.joining(" ", "[", "]"));
+				System.out.println(joinedString+" "+joinedString0);
+		
+	  // 	
 	}
 	
 
