@@ -87,7 +87,7 @@ public class CollectorsMethods
 				String joinedString = namesList.parallelStream().collect(Collectors.joining(" ", "[", "]"));
 				System.out.println(joinedString+" "+joinedString0);
 		
-	  // 	
+	  
 	}
 	
 
