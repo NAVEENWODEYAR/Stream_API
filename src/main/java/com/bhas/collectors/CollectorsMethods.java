@@ -48,13 +48,23 @@ public class CollectorsMethods
 	    // 4. Counting elements: Counting(),
 				System.out.println("\n Collectors.count()");
 				System.out.println(" Numbers of entries in the collection,"+oddNumbers.stream().count());
-	    */
+	    
 		// 5. Finding minimum value: minBy(),
 	    		System.out.println("\n Collectors.minBy()");
 	    		Integer min = oddNumbers.parallelStream().min((o1, o2) -> o1-o2 ).get();
 	    		Integer min1 = oddNumbers.stream().sorted().findFirst().get();
 	    		Integer min2 = oddNumbers.parallelStream().collect(Collectors.minBy(Comparator.naturalOrder())).get();
 	    		System.out.println("Minimum value in the collection,"+min+" "+min1+" "+min2);
+	    
+	    */
+	    // 6.  Finding maximum value: maxBy()
+				System.out.println("\n Collectors.maxBy()");
+				Integer max = oddNumbers.parallelStream().max(Comparator.naturalOrder()).get();
+				Integer max1 = oddNumbers.stream().sorted().min(Comparator.reverseOrder()).get();
+				Integer max2 = oddNumbers.parallelStream().sorted(Comparator.reverseOrder()).findFirst().get();
+				Integer max3 = oddNumbers.stream().collect(Collectors.maxBy(Comparator.comparing(Integer::intValue))).get();
+				System.out.println("Maximum value in the collection,"+max+""+max1+""+max2+""+max3);
+	
 	}
 	
 
