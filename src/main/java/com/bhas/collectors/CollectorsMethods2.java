@@ -20,10 +20,12 @@ public class CollectorsMethods2
 		/* */
 		// 1. Averaging long: averagingLong(),Finds the average value of a collection of long values,  It will return a Double value, not a long value.
 			System.out.println("\n Collectors.averagingLong(n->n*n) ");
-			Double avgValue = oddNumbers.parallelStream().collect(Collectors.averagingLong(n->n*n));
+			byte avgValue = oddNumbers.parallelStream().collect(Collectors.averagingLong(n->n*n)).byteValue();
 			System.out.println("Average value in the collection,"+avgValue);
 	
+		// 2. Averaging Double: averagingDouble(),Finds the average value of a collection of double values.
+			System.out.println("\n Collectors.averagingLong(n->n*n) ");
+			int avgInt = oddNumbers.stream().collect(Collectors.averagingInt(n->n+1)).intValue();
+			System.out.println("Average value in the form of int,"+avgInt);
 	}
-	
-
 }
