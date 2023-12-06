@@ -42,7 +42,7 @@ public class CollectorsMethods2
 			System.out.println("\nMinimum->"+summary.getMin());
 			System.out.println("\nMaximum->"+summary.getMax());
 			System.out.println("\nAverage->"+summary.getAverage());
-			System.out.println("\nTotal values->"+summary.getCount());
+			System.out.println("\nTotal count->"+summary.getCount());
 			System.out.println("\nClass->"+summary.getClass());
 	
 	  // 5. GroupingBy method: groupingBy(),GroupingBy() is an advance method to create a map out of any other collection
