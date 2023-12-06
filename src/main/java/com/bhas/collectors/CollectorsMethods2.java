@@ -44,5 +44,10 @@ public class CollectorsMethods2
 			System.out.println("\nAverage->"+summary.getAverage());
 			System.out.println("\nTotal values->"+summary.getCount());
 			System.out.println("\nClass->"+summary.getClass());
+	
+	  // 5. GroupingBy method: groupingBy(),GroupingBy() is an advance method to create a map out of any other collection
+			System.out.println("\n Collectors.summarizingInt(n->n*n) ");
+			Map<Integer, List<Integer>> collect = oddNumbers.parallelStream().collect(Collectors.groupingBy(Integer::intValue));
+			System.out.println(collect);
 	}
 }
