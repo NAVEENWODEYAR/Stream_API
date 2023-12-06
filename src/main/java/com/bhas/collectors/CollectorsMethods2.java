@@ -2,6 +2,7 @@ package com.bhas.collectors;
 
 import java.util.Arrays;
 import java.util.Comparator;
+import java.util.IntSummaryStatistics;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
@@ -30,8 +31,18 @@ public class CollectorsMethods2
 	
 		*/
 	    // 3. Summing Integers: summingInt(),
-			System.out.println("\n Collectors.averagingLong(n->n*n) ");
+			System.out.println("\n Collectors.summingInt(n->n*n) ");
 			int sum = oddNumbers.stream().collect(Collectors.summingInt(n->n)).intValue();
 			System.out.println("Sum of the collection,"+sum);
+	
+       // 4. Summarizing Integer: summarizingInt(),It gives all the major arithmetic operation values of the values present in the collection like the average of all values, minimum value, maximum values, count, and sum of all values.
+			System.out.println("\n Collectors.summarizingInt(n->n*n) ");
+			IntSummaryStatistics summary = oddNumbers.parallelStream().collect(Collectors.summarizingInt(n->n));
+			System.out.println("\nSum->"+summary.getSum());
+			System.out.println("\nMinimum->"+summary.getMin());
+			System.out.println("\nMaximum->"+summary.getMax());
+			System.out.println("\nAverage->"+summary.getAverage());
+			System.out.println("\nTotal values->"+summary.getCount());
+			System.out.println("\nClass->"+summary.getClass());
 	}
 }
