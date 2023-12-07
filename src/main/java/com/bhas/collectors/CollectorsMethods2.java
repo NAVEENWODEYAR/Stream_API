@@ -15,7 +15,7 @@ public class CollectorsMethods2
 	
 	public static void main(String[] args) 
 	{
-		List<Integer> oddNumbers = Arrays.asList(1,3,5,7,9,1,3,5,7);
+		List<Integer> oddNumbers = Arrays.asList(1,3,5,7,9,1,3,5,7,0);
 		System.out.println("*********");
 		
 		/* 
