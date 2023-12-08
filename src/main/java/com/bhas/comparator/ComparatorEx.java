@@ -21,6 +21,11 @@ public class ComparatorEx
 		// getMaxSalary,
 						Employee maxSal = empList.parallelStream().collect(Collectors.maxBy(Comparator.comparing(Employee::getEmpSalary))).get();
 						System.out.println("Maximum salary in the list,"+maxSal.getEmpSalary()+"-"+maxSal.getEmpName());
+	
+	   // getMinSalary,
+						Employee minSal = empList.stream().min(Comparator.comparing(Employee::getEmpSalary)).get();
+						System.out.println("Minimun salary in the list,"+minSal.getEmpSalary()+"-"+minSal.getEmpName());
+	
 	}
 
 }
