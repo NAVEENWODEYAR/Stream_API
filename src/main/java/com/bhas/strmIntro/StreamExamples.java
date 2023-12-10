@@ -61,7 +61,7 @@ public class StreamExamples {
 //		List<String> names1 = Arrays.asList("One", "Two", "Three", "Four");
 //		names1.parallelStream().map(String::length).forEach(System.out::print);
 
-		// Sorting operations	
+		//6. Sorting operations	
 		List<String> names2 = Arrays.asList("One", "Two", "Three", "Four","Five");
 		names2.parallelStream().sorted().forEach(System.out::println);
 		names2.stream().sorted((s1,s2)-> s1.length() - s2.length()).forEach(System.out::print);
@@ -73,5 +73,9 @@ public class StreamExamples {
 		// min() : Finding the minimum,
 		int min = Arrays.stream(new int[] {1,2,3,4,5,6,7,8,9}).min().getAsInt();
 		System.out.println("Minimum in the given list,"+min);
+		
+		//7. Finding And Matching Operations,
+		boolean anyMatch = Arrays.stream(new String[] {"Bhaskar","Nandi","Gowri","Gani","Lakshmi","MahaLakshmi"}).anyMatch(s->s.startsWith("g"));
+		System.out.println("Found the matched string,"+anyMatch);
 	}
 }
