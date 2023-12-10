@@ -14,9 +14,17 @@ public class StreamExamples
 	{
 		System.out.println("\n ******** \n");
 		
-		// 1. creating an empty stream,
+		// 1. empty() : Creates an empty stream,
 			Stream<?> strm = Stream.empty();
 			System.out.println(strm);
 			System.out.println(strm.count());
+			
+	   // 2. of(T t) : Creates a stream of single element of type T,
+			Stream<String> strm1 = Stream.of(new String());
+			System.out.println(strm1+"="+strm1.count());
+			
+	  // 3. of(T… values) : Creates a stream from values,
+			Stream<Integer> strm2 = Stream.of(1,3,5,8);
+			System.out.println(strm2+"="+strm2.count());
 	}
 }
