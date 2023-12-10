@@ -70,5 +70,8 @@ public class StreamExamples {
 		int asInt = Arrays.stream(new int[] {1,2,3,4,5,6,7,8}).reduce((a,b)->a+b).getAsInt();
 		System.out.println("\nstream().reduce()-"+asInt);
 		
+		// min() : Finding the minimum,
+		int min = Arrays.stream(new int[] {1,2,3,4,5,6,7,8,9}).min().getAsInt();
+		System.out.println("Minimum in the given list,"+min);
 	}
 }
