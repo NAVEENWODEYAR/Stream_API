@@ -66,5 +66,8 @@ public class StreamExamples {
 		names2.parallelStream().sorted().forEach(System.out::println);
 		names2.stream().sorted((s1,s2)-> s1.length() - s2.length()).forEach(System.out::print);
 		
+		// reduce() : Produces a single value,
+		Arrays.stream(new int[] {1,2,3,4,5,6,7,8}).reduce((a,b)->a+b).orElseGet(System.out::println);
+		
 	}
 }
