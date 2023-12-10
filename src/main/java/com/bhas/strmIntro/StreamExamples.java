@@ -1,6 +1,7 @@
 package com.bhas.strmIntro;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Stream;
 
@@ -36,11 +37,30 @@ public class StreamExamples
 						arrList.add(2, "Three");
 						arrList.add(3, "One");
 						
-			Stream<String> strm3 = arrList.stream();
-							strm3.forEach(System.out::println);
+			
+			try 
+			{
+				Stream<String> strm3;
+				strm3 = arrList.stream();
+								strm3.forEach(System.out::println);
+			} 
+			catch (Exception e) 
+			{
+				e.printStackTrace();
+			}
 							
-	 // 5. Selection Operations,
+	 // 5. Selection Operations, Intermediate operations,
 	 // a. filter() : Selecting with a predicate,
-							strm3.filter(n -> n.length()>= 2).forEach(System.out::println);
+			List<String> names = Arrays.asList("One","Two","Three","Four");
+							names.stream().filter(n -> n.length()>= 2).forEach(System.out::println);
+							
+	// b. distinct() : Selects only unique elements
+			List<Integer> numList = List.of(1,2,3,4,5,6,7,8,9,8,7,6,5);
+							numList.parallelStream().distinct().forEach(System.out::print);
+							
+	// c. limit() & skip() : Skips first n elements,
+			List<Integer> numList1 = List.of(1,2,3,4,5,6,7,8,9,8,7,6,5);
+							numList1.parallelStream().sorted().skip(1).limit(1).forEach(System.out::println);
+							
 	}
 }
