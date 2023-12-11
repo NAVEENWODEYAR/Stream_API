@@ -9,15 +9,7 @@ public class StreamExamples3 {
 	public static void main(String[] args) {
 		System.out.println("\n ******** \n");
 		
-		//1. Finding And Matching Operations,anyMatch() : Any one element matches
-		boolean anyMatch = Arrays.stream(new String[] {"Bhaskar","Nandi","Gowri","Gani","Lakshmi","MahaLakshmi"}).anyMatch(s->s.startsWith("G"));
-		System.out.println("\nFound the matched string,"+anyMatch);
-		
-		//2. allMatch() : All elements matches,
-		boolean allMatch = Arrays.stream(new int[] {3,5,7,9}).allMatch(n->n/2!=0);
-		System.out.println("\nGiven list is odd,"+allMatch);
-		
-		boolean noneMatch = Arrays.stream(new int[] {1,2,3,4,5,6,7,8}).noneMatch(n->n*n >1);
-		System.out.println(noneMatch);
+		//1. peek(),Performs an additional action on each element of a stream. This method is only to support debugging where you want to see the elements as you pass in a pipeline.
+		Arrays.stream(new int[] {1,3,5,7,9}).peek(n->n+1).map(n->n*n).peek(n->n-1).forEach(System.out::println);
 	}
 }

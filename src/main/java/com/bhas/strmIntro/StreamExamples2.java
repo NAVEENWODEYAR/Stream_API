@@ -21,7 +21,10 @@ public class StreamExamples2 {
 		boolean noneMatch = Arrays.stream(new int[] {1,2,3,4,5,6,7,8}).noneMatch(n->n*n >1);
 		System.out.println(noneMatch);
 		
-		// 4.indFirst() : Finding first element
+		//4. indFirst() : Finding first element
 		Arrays.stream(new int[] {5,6,4,7,3,8}).findFirst().ifPresent(System.out::print);
+		
+		//5. findAny() : Finding any element
+		Arrays.stream(new String[] {"One","Two.","Three","Four,","Five,,"}).findAny().ifPresent(System.out::println);
 	}
 }
