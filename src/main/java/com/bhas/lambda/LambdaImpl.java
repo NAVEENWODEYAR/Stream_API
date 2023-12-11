@@ -12,7 +12,10 @@ public class LambdaImpl implements LambdaEx
 	}
 	public static void main(String[] args) 
 	{
-
+		LambdaEx.m1();
+		LambdaEx l1 = year ->year-LocalDate.now().getYear();
+		int age = l1.getAge(LocalDate.now().getYear());
+		System.out.println(age);
 	}
 
 }
