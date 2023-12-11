@@ -16,6 +16,7 @@ public class LambdaImpl implements LambdaEx
 		LambdaEx l1 = year ->year-LocalDate.now().getYear();
 		int age = l1.getAge(LocalDate.now().getYear());
 		System.out.println(age);
+		System.out.println(new LambdaImpl().getAge(1999));
 	}
 
 }
