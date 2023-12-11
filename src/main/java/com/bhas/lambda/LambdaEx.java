@@ -8,4 +8,9 @@ public interface LambdaEx {
 	}
 	int getAge(int year);
 	
+	default void m2()
+	{
+		System.out.println("\n Default method");
+	}
+	
 }
