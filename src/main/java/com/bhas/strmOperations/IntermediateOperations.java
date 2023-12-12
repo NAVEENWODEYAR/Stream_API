@@ -16,13 +16,24 @@ public class IntermediateOperations {
 		List<String> list = Arrays.asList("Ammie","Bella","Catherine","Dora","Emmie","Florence");
 		
 		// filter,
+		System.out.println("*************");
 		list.parallelStream().filter(str->str.length()>=5).forEach(System.out::println);
 		
 		// map(),
+		System.out.println("*************");
 		list.parallelStream().map(str->str.toUpperCase()).forEachOrdered(System.out::println);
 		
 		// flatmap(),
+		System.out.println("*************");
 		list.stream().flatMap(str->Stream.of(str.charAt(1))).forEach(System.out::println);
+		
+		// skip(),
+		System.out.println("*************");
+		list.parallelStream().skip(4).forEachOrdered(System.out::println);
+		
+		// limit(),
+		System.out.println("*************");
+		list.parallelStream().limit(4).forEach(System.out::println);
 	}
 
 }
