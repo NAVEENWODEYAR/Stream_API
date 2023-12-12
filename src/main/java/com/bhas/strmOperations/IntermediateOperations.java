@@ -2,6 +2,7 @@ package com.bhas.strmOperations;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.stream.Stream;
 
 public class IntermediateOperations {
 	{
@@ -11,7 +12,7 @@ public class IntermediateOperations {
 	public static void main(String[] args) {
 		System.out.println("\n Intermediate operations,");
 		
-		// Intermediate operations, filter(),skip(),limit(),distinct(),sorted().
+		// Intermediate operations, filter(),skip(),limit(),distinct(),sorted(),flatmap(),.
 		List<String> list = Arrays.asList("Ammie","Bella","Catherine","Dora","Emmie","Florence");
 		
 		// filter,
@@ -19,6 +20,9 @@ public class IntermediateOperations {
 		
 		// map(),
 		list.parallelStream().map(str->str.toUpperCase()).forEachOrdered(System.out::println);
+		
+		// flatmap(),
+		list.stream().flatMap(str->Stream.of(str.charAt(1))).forEach(System.out::println);
 	}
 
 }
