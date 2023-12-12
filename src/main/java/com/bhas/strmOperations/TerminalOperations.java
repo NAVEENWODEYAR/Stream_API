@@ -1,0 +1,23 @@
+package com.bhas.strmOperations;
+
+import java.util.Arrays;
+import java.util.List;
+import java.util.stream.Stream;
+
+public class TerminalOperations {
+	{
+		System.out.println(" return non-stream values like primitive or object or collection or return nothing are called terminal operations.");
+	}
+	public static void main(String[] args) {
+		System.out.println("\n Intermediate operations,");
+		
+		// Terminal Operations, forEach(), toArray(), reduce(), collect(), min(), max(), count(), anyMatch(), allMatch(), noneMatch(), findFirst(), findAny()
+		List<String> list = Arrays.asList("Ammie","Bella","Catherine","Dora","Emmie","Florence","Genny","Helen","Helen");
+		
+		// toArray(),
+		Object[] array = list.parallelStream().toArray();
+		System.out.println(Arrays.toString(array));
+		
+	}
+
+}
