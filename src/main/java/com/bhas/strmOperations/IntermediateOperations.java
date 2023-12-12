@@ -11,6 +11,8 @@ public class IntermediateOperations {
 	public static void main(String[] args) {
 		System.out.println("\n Intermediate operations,");
 		List<String> list = Arrays.asList("Ammie","Bella","Catherine","Dora","Emmie","Florence");
+		
+		list.parallelStream().filter(str->str.length()>=5).forEach(System.out::println);
 	}
 
 }
