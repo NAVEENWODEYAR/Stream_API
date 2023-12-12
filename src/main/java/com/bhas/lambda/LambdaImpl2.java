@@ -11,6 +11,7 @@ public class LambdaImpl2
 		LambdaEx l1 = year ->year-LocalDate.now().getYear();
 		int age = l1.getAge(1996);
 		System.out.println(age);
+		
 	}
 
 }
