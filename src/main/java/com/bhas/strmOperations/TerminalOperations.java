@@ -24,6 +24,8 @@ public class TerminalOperations {
 		List<Integer> numList = List.of(1,2,3,4,5,6,7,8,9);
 						Integer reduce = numList.parallelStream().reduce(0,Integer::sum);
 		System.out.println(reduce);
+						String reduce2 = list.stream().reduce("",String::concat);
+		System.out.println(reduce2);
 	}
 
 }
