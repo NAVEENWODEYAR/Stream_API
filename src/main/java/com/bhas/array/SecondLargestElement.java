@@ -8,7 +8,7 @@ import java.util.NoSuchElementException;
 
 public class SecondLargestElement 
 {
-	static void secLargestInArray(int[] nums)
+	static void secLargestInArray(Integer[] nums)
 	{
 		Arrays.sort(nums);
 		System.out.println(nums[nums.length-2]);
@@ -17,15 +17,19 @@ public class SecondLargestElement
 	public static void main(String[] args) 
 	{
 		System.out.println("\n Homogeneous collection of elements stored at contiguous memory locations");
-		int[] nums = {5,7,3,1,8,0};
+		Integer[] nums = {5,7,3,1,8,0};
 		secLargestInArray(nums);
-		
-		Arrays.stream(nums).distinct().sorted().skip(1).findFirst().ifPresent(System.out::println);
+		secLargestNum(nums);
+	}
+	
+	static void secLargestNum(Integer[] nums)
+	{
+		System.out.println("\n**********");
 		List<Integer> list = new ArrayList(Arrays.asList(nums));
 //		list.stream().distinct().sorted(Comparator.reverseOrder()).skip(1).findFirst().orElseThrow(()-> new NoSuchElementException("No value"));
 		
-		Integer secL = list.stream().distinct().sorted(Comparator.reverseOrder()).skip(1).findFirst().get();
-//		System.out.println(list);
+		Integer secL = list.stream().sorted(Comparator.reverseOrder()).skip(1).findFirst().get();
+		System.out.println("Second largest number in the array,"+secL);
 	}
 
 }
