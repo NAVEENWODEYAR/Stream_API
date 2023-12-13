@@ -1,4 +1,4 @@
-package com.bhas;
+package com.bhas.singleTonv;
 
 public class SingleTonClsEx 
 {
@@ -23,7 +23,9 @@ public class SingleTonClsEx
 	}
 	public static void main(String[] args) 
 	{
-		System.out.println("\n one instance and provides a global point of access to that instance.");
+		System.out.println("\n SingleTon Class - One instance and provides a global point of access to that instance.");
+		System.out.println(new SingleTonClsEx());
+		System.out.println(new SingleTonClsEx());
 	}
 
 }
