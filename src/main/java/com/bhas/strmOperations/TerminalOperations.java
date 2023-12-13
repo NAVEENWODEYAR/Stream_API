@@ -2,6 +2,7 @@ package com.bhas.strmOperations;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 public class TerminalOperations {
@@ -26,6 +27,11 @@ public class TerminalOperations {
 		System.out.println(reduce);
 						String reduce2 = list.stream().reduce("",String::concat);
 		System.out.println(reduce2);
+		
+		// collect(),
+		List<String> collect = list.stream().collect(Collectors.toUnmodifiableList());
+		System.out.println(collect);
+		
 	}
 
 }
