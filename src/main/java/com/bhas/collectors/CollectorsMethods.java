@@ -86,7 +86,7 @@ public class CollectorsMethods
 				List<String> namesList1 = Arrays.asList("1","2","3","4","5","6");
 				String joinedString0 = namesList.stream().collect(Collectors.joining(" "));
 				String joinedString = namesList.parallelStream().collect(Collectors.joining(" ", "[", "]"));
-				System.out.println(joinedString+" "+joinedString0);
+				System.out.println(joinedString+"\n"+joinedString0);
 				String collect = namesList1.parallelStream().collect(Collectors.joining("-", "[", "]"));
 				System.out.println(collect);
 		

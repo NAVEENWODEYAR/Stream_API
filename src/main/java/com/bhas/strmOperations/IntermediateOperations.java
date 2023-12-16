@@ -4,9 +4,10 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Stream;
 
-public class IntermediateOperations {
+public class IntermediateOperations 
+{
 	{
-		System.out.println("\nAs intermediate operations return another stream as a result, they can be chained together to form a pipeline of operations. "
+		System.out.println("\n Intermediate operations return another stream as a result, they can be chained together to form a pipeline of operations. "
 				+ "Terminal operations can not be chained together.");
 	}
 	public static void main(String[] args) {
