@@ -82,7 +82,7 @@ public class CollectorsMethods
 		*/
 	   // 10. Joining elements: joining(),Collectors can be used to create a string by joining all the elements of a collection, with or without any delimiter, suffix, and prefix.
 				System.out.println("\n Collectors.joining()");
-				List<String> namesList = Arrays.asList("Gowri","Nandi","Gani","Lakshmi","MahaLakshmi");
+				List<String> namesList = Arrays.asList("Gowri","Nandi","Gani","Lakshmi","MahaLakshmi","Santhanam");
 				String joinedString0 = namesList.stream().collect(Collectors.joining(" "));
 				String joinedString = namesList.parallelStream().collect(Collectors.joining(" ", "[", "]"));
 				System.out.println(joinedString+" "+joinedString0);
