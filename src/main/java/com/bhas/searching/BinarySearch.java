@@ -16,25 +16,6 @@ public class BinarySearch
 		return Arrays.binarySearch(num, search);
 	}
 	
-	// Java implementation of iterative Binary Search,
-	static int binarySearch(int[] num,int target)
-	{
-		int left = 0;
-		int right = num.length-1;
-		int mid = (left+right)/2;
-		
-		while(left<=right)
-		{
-			if(num[mid] == target)
-				return mid;
-			else if(num[mid] > target)
-				right = mid-1;
-			else
-				left = mid+1;
-		}
-		return -1;
-	}
-	
 	public static void main(String[] args) 
 	{
 		System.out.println("\n Binary Search");

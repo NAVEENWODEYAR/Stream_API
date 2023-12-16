@@ -27,6 +27,7 @@ public class BinarySearch2
 		if(left > right)
 			System.out.println("Element not found,");
 	}
+	
 	public static void main(String[] args) 
 	{
 		System.out.println("\n Binary Search");
