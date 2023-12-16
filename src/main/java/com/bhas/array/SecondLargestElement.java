@@ -19,7 +19,6 @@ public class SecondLargestElement
 		System.out.println("\n Homogeneous collection of elements stored at contiguous memory locations");
 		Integer[] nums = {5,7,3,1,8,0};
 		secLargestInArray(nums);
-		secLargestNum(nums);
 	}
 	
 	static void secLargestNum(Integer[] nums)
