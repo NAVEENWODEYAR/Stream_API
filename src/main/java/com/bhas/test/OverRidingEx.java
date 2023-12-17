@@ -10,6 +10,7 @@ public class OverRidingEx extends OverLoadingEx {
 	public static void main(String[] args) {
 		
 		new OverRidingEx().m1();
+		new OverLoadingEx().m1();
 	}
 
 }
