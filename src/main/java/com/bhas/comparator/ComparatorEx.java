@@ -29,6 +29,8 @@ public class ComparatorEx
 						Employee minSal2 = empList.stream().sorted(Comparator.comparing(Employee::getEmpSalary)).findFirst().get();
 						System.out.println("Minimun salary in the list,"+minSal.getEmpSalary()+"-"+minSal.getEmpName()+"&"+minSal1.getEmpSalary()+"-"+minSal2.getEmpName());
 	
+	
+						empList.parallelStream().max((o1, o2) -> o1.getEmpSalary() - o2.getEmpSalary() ).orElse(minSal2);
 	}
 
 }
