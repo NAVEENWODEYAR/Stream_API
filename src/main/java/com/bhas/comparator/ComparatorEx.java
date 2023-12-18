@@ -17,6 +17,7 @@ public class ComparatorEx
 						empList.add(new Employee("Nandi", 3, 5000.00));
 						empList.add(new Employee("Gowri", 5, 85000.00));
 						empList.add(new Employee("Gani", 6, 75000.00));
+						empList.add(new Employee("Santhana", 1, 95000.00));
 						
 		// getMaxSalary,
 						Employee maxSal = empList.parallelStream().collect(Collectors.maxBy(Comparator.comparing(Employee::getEmpSalary))).get();
