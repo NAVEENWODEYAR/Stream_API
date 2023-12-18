@@ -33,6 +33,7 @@ public class ComparatorEx
 	
 						Spliterator<Employee> spliterator = empList.stream().spliterator();
 						System.out.println(spliterator.getExactSizeIfKnown());
+						System.out.println(spliterator.getComparator());
 	
 	}
 
