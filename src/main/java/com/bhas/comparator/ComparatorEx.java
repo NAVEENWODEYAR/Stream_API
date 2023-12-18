@@ -3,6 +3,7 @@ package com.bhas.comparator;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
+import java.util.Spliterator;
 import java.util.stream.Collectors;
 
 public class ComparatorEx 
@@ -30,6 +31,9 @@ public class ComparatorEx
 						Employee minSal2 = empList.stream().sorted(Comparator.comparing(Employee::getEmpSalary)).findFirst().get();
 						System.out.println("Minimun salary in the list,"+minSal.getEmpSalary()+"-"+minSal.getEmpName()+"&"+minSal1.getEmpSalary()+"-"+minSal2.getEmpName());
 	
-		}
+						Spliterator<Employee> spliterator = empList.stream().spliterator();
+						System.out.println(spliterator.getExactSizeIfKnown());
+	
+	}
 
 }
