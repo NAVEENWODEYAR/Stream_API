@@ -26,6 +26,7 @@ public class SingleTonClsEx
 		System.out.println("\n SingleTon Class - One instance and provides a global point of access to that instance.");
 		System.out.println(new SingleTonClsEx().hashCode());
 		System.out.println(new SingleTonClsEx().hashCode());
+		System.out.println(new SingleTonClsEx().getInstance().getInstance());
 	}
 
 }
