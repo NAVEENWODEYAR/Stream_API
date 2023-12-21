@@ -8,7 +8,7 @@ public class SingleTonClsEx
 	// Private constructor to prevent instantiation from outside,
 	private SingleTonClsEx()
 	{
-		
+		System.out.println("Private Constructor!");
 	}
 	
 	// Public method to get the singleton instance,
@@ -24,8 +24,8 @@ public class SingleTonClsEx
 	public static void main(String[] args) 
 	{
 		System.out.println("\n SingleTon Class - One instance and provides a global point of access to that instance.");
-		System.out.println(new SingleTonClsEx());
-		System.out.println(new SingleTonClsEx());
+		System.out.println(new SingleTonClsEx().hashCode());
+		System.out.println(new SingleTonClsEx().hashCode());
 	}
 
 }
