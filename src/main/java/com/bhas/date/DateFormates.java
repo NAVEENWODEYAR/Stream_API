@@ -8,5 +8,4 @@ public class DateFormates {
 		Date date = new Date(System.currentTimeMillis());
 		System.out.println(date);
 	}
-
 }
