@@ -8,5 +8,6 @@ public class DateFormates {
 		Date date = new Date(System.currentTimeMillis());
 		System.out.println(date);
 		System.out.println(date.getDate());
+		System.out.println(DateFormates.class.getCanonicalName());
 	}
 }
