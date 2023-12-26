@@ -20,7 +20,7 @@ public final class ImmutableClass
 		this.classPropertis = new ArrayList<>(list);
 	}
 	
-	// 3.Provide only getters, no setters,
+	// 3.Provide only getters.,
 	public int getId()
 	{
 		return this.clsId;
