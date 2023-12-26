@@ -24,7 +24,7 @@ public class SecondLargestElement
 	static void secLargestNum(Integer[] nums)
 	{
 		System.out.println("\n**********");
-		List<Integer> list = new ArrayList(Arrays.asList(nums));
+		List<Integer> list = new ArrayList<Integer>(Arrays.asList(nums));
 //		list.stream().distinct().sorted(Comparator.reverseOrder()).skip(1).findFirst().orElseThrow(()-> new NoSuchElementException("No value"));
 		
 		Integer secL = list.stream().sorted(Comparator.reverseOrder()).skip(1).findFirst().get();
