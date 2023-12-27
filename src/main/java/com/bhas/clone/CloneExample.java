@@ -8,7 +8,7 @@ public class CloneExample implements Cloneable
 		System.out.println("\nJava.lang.Cloneable interface is a marker interface.");
 		CloneExample cl = new CloneExample();
 		Object clone = cl.clone();
-		System.out.println(cl.hashCode()+"=="+cl.hashCode());
+		System.out.println(cl.hashCode()+"=="+clone.hashCode());
 	}
 
 }
