@@ -11,7 +11,7 @@ public class ComparatorEx
 
 	public static void main(String[] args) 
 	{
-		// ArrayList to store values,
+		// ArrayList to store employees,
 		List<Employee> empList = new ArrayList<>();
 		
 						empList.add(new Employee("Bhaskar K", 25, 95000.00));
