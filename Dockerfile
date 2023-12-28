@@ -1,4 +1,4 @@
-#Dockerfile,
+#Dockerfile,blueprint for building docker image,
 
 FROM openjdk:17
 RUN mkdir /usr/app/
