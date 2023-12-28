@@ -7,7 +7,7 @@ import java.util.stream.Stream;
 
 public class TerminalOperations {
 	{
-		System.out.println(" return non-stream values like primitive or object or collection or return nothing are called terminal operations.");
+		System.out.println(" Returns non-stream values like primitive or object or collection or return nothing are called terminal operations.");
 	}
 	public static void main(String[] args) {
 		System.out.println("\n Intermediate operations,");
