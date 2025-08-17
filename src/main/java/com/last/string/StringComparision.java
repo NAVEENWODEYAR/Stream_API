@@ -13,6 +13,7 @@ public class StringComparision {
 		String st = "Year";
 		String s1 = new String("Year");
 		System.out.println(st.equals(s1));
+  System.out.println("OverRided equals()");
 	}
 
 }
