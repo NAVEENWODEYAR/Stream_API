@@ -11,7 +11,7 @@ public class StringComparision {
 		System.out.println("\nString Comparision,");
 		
 		String st = "Year";
-		String s1 = new String("Year");
+		String s1 = new String("year");
 		System.out.println(st.equals(s1));
   System.out.println("OverRided equals()");
 	}
