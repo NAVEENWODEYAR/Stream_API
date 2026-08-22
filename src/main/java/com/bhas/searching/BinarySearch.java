@@ -18,7 +18,7 @@ public class BinarySearch
 	
 	public static void main(String[] args) 
 	{
-		System.out.println("\n Binary Search");
+		System.out.println("\n Binary Search Application");
 		int[] arr = {1,9,2,8,3,7,5};
 		int n = binarySearch(arr);
 		
