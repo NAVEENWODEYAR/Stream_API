@@ -13,6 +13,6 @@ public class TestController
 	@ResponseStatus(code = HttpStatus.VARIANT_ALSO_NEGOTIATES)
 	public String greetMsg()
 	{
-		return "Welcome to the StreamAPI";
+		return "Welcome to the StreamAPI demo application";
 	}
 }
