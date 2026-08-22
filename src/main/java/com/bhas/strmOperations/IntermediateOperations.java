@@ -14,7 +14,7 @@ public class IntermediateOperations
 		System.out.println("\n Intermediate operations,");
 		
 		// Intermediate operations, filter(),skip(),limit(),distinct(),sorted(),flatmap(),.
-		List<String> list = Arrays.asList("Ammie","Bella","Catherine","Dora","Emmie","Florence","Genny","Helen","Helen");
+		List<String> list = Arrays.asList("Ammie","Bella","Catherine","Dora","Emmie","Florence","Genny","Helen","Helen","Ramu");
 		
 		// filter(),
 		System.out.println("*************");
