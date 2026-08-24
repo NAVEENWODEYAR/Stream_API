@@ -75,7 +75,7 @@ public class StreamExamples {
 		System.out.println("Minimum in the given list,"+min);
 		
 		//7. Finding And Matching Operations,
-		boolean anyMatch = Arrays.stream(new String[] {"Bhaskar","Nandi","Gowri","Gani","Lakshmi","MahaLakshmi"}).anyMatch(s->s.startsWith("g"));
+		boolean anyMatch = Arrays.stream(new String[] {"Bhaskar","Nandi","Gowri","Gani","Lakshmi","MahaLakshmi","Ramu"}).anyMatch(s->s.startsWith("g"));
 		System.out.println("Found the matched string,"+anyMatch);
 	}
 }
