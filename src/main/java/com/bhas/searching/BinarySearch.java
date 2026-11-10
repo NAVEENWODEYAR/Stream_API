@@ -8,7 +8,7 @@ public class BinarySearch
 	// Using Arrays.binarySearch(),
 	static int binarySearch(int[] num)
 	{
-		System.out.println("Array given,"+Arrays.toString(num));
+		System.out.println("Input Array given,"+Arrays.toString(num));
 		Scanner sc = new Scanner(System.in);
 		System.out.println("\n Enter the search element:");
 		int search = sc.nextInt();
@@ -19,7 +19,7 @@ public class BinarySearch
 	public static void main(String[] args) 
 	{
 		System.out.println("\n Binary Search Application");
-		int[] arr = {1,9,2,8,3,7,5};
+		int[] arr = {1,9,2,8,3,7,5,0,1,2,3,4};
 		int n = binarySearch(arr);
 		
 		if(n>0)
